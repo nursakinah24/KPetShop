@@ -32,7 +32,7 @@ import java.util.HashMap;
 
 public class AdminAddProductActivity extends AppCompatActivity {
 
-    private String nameCategory, Product, Description, Price, saveCurrentDate, saveCurrentTime, productRandomKey, downloadImageUrl;
+    private String nameCategory, Product, Description, Price, saveDate, saveTime, productRandomKey, downloadImageUrl;
     private Button btnSubmit;
     private ImageView selectImage;
     private EditText edName, edDesc, edPrice;
@@ -106,12 +106,12 @@ public class AdminAddProductActivity extends AppCompatActivity {
         Calendar calendar = Calendar.getInstance();
 
         SimpleDateFormat currentDate = new SimpleDateFormat("MMM dd, yyyy");
-        saveCurrentDate = currentDate.format(calendar.getTime());
+        saveDate = currentDate.format(calendar.getTime());
 
         SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
-        saveCurrentTime = currentTime.format(calendar.getTime());
+        saveTime = currentTime.format(calendar.getTime());
 
-        productRandomKey = saveCurrentDate + saveCurrentTime;
+        productRandomKey = saveDate + saveTime;
 
         final StorageReference filePath = storageRef.child(imageUri.getLastPathSegment() + productRandomKey + ".jpg");
         final UploadTask UploadTask = filePath.putFile(imageUri);
@@ -153,8 +153,8 @@ public class AdminAddProductActivity extends AppCompatActivity {
     private void saveProduct() {
         HashMap<String, Object> ProductMap = new HashMap<>();
         ProductMap.put("pid", productRandomKey);
-        ProductMap.put("date",saveCurrentDate);
-        ProductMap.put("time",saveCurrentTime);
+        ProductMap.put("date",saveDate);
+        ProductMap.put("time",saveTime);
         ProductMap.put("description", Description);
         ProductMap.put("image", downloadImageUrl);
         ProductMap.put("category", nameCategory);

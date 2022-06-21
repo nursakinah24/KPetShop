@@ -32,7 +32,7 @@ public class CartActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
     private Button nextProcessBtn;
-    private TextView txtTotalAmount, txtmessage1;
+    private TextView txtTotalAmount;
 
     private DatabaseReference cartListRef;
 
@@ -50,7 +50,6 @@ public class CartActivity extends AppCompatActivity {
 
         nextProcessBtn = findViewById(R.id.next_process_btn);
         txtTotalAmount = findViewById(R.id.total_price);
-        txtmessage1 = findViewById(R.id.message1);
 
         cartListRef = FirebaseDatabase.getInstance().getReference().child("cart list").child("User View").child("phone").child("Product");
 

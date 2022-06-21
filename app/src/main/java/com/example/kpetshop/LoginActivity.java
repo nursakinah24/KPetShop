@@ -14,7 +14,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.kpetshop.Prevalent.Prevalent;
 import com.example.kpetshop.model.Admins;
 import com.example.kpetshop.model.Users;
 import com.google.firebase.database.DataSnapshot;

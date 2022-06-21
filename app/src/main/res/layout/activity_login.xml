@@ -104,6 +104,7 @@
         android:fontFamily="@font/anton"
         android:text="Log In"
         android:textSize="20sp"
+        android:textColor="@color/white"
         app:backgroundTint="#1C4046"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/logPassword"

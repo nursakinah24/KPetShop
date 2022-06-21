@@ -12,19 +12,27 @@
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
         <activity
-            android:name=".AdminUserProductActivity"
-            android:exported="false" />
-        <activity android:name=".AdminCheckOrderActivity" />
+            android:name=".AdminUserOrderActivity"
+            android:parentActivityName=".AdminCheckOrderActivity" />
+        <activity android:name=".AdminCheckOrderActivity"
+            android:parentActivityName=".AdminCategoryActivity" />
         <activity android:name=".AdminAddProductActivity" />
-        <activity android:name=".ConfirmActivity" />
-        <activity android:name=".DetailProductActivity" />
-        <activity android:name=".SettingActivity" />
-        <activity android:name=".SearchActivity" />
-        <activity android:name=".CartActivity" />
+        <activity android:name=".ConfirmActivity"
+            android:parentActivityName=".CartActivity" />
+        <activity android:name=".DetailProductActivity"
+            android:parentActivityName=".HomeActivity" />
+        <activity android:name=".SettingActivity"
+            android:parentActivityName=".HomeActivity" />
+        <activity android:name=".SearchActivity"
+            android:parentActivityName=".HomeActivity" />
+        <activity android:name=".CartActivity"
+            android:parentActivityName=".HomeActivity" />
         <activity android:name=".AdminCategoryActivity" />
         <activity android:name=".HomeActivity" />
-        <activity android:name=".SignupActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".SignupActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".LoginActivity"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">

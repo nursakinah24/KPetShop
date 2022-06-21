@@ -11,7 +11,7 @@ import com.example.kpetshop.Interface.ItemClickListener;
 
 //class ini menyimpan referensi dari view-view yang digunakan pada sebuah item direcycle view.
 //viewholder = menyimpan view2 yang nantinya akan digunakan untuk menampikan data
-//tujuannyamenghemat waktu dibandingkan dengan memakai findbyid() saat update list dengan data yang baru
+//tujuannya menghemat waktu dibandingkan dengan memakai findbyid() saat update list dengan data yang baru
 public class ProductViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
     public TextView txtProductName, txtProductDescription, txtproductPrice;
     public ImageView imageView;

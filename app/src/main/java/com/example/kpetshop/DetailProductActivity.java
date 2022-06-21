@@ -13,7 +13,6 @@ import android.widget.Toast;
 import com.cepheuen.elegantnumberbutton.view.ElegantNumberButton;
 
 import com.example.kpetshop.model.Product;
-import com.example.kpetshop.Prevalent.Prevalent;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;

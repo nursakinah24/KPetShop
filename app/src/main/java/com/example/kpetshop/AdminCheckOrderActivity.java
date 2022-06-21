@@ -25,14 +25,14 @@ import com.google.firebase.database.FirebaseDatabase;
 public class AdminCheckOrderActivity extends AppCompatActivity {
 
     private RecyclerView orderList;
-    private DatabaseReference ordersRef;
+    private DatabaseReference orderRef;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_check_order);
 
-        ordersRef = FirebaseDatabase.getInstance().getReference().child("Orders");
+        orderRef = FirebaseDatabase.getInstance().getReference().child("ViewOrders");
 
         orderList = findViewById(R.id.order_list);
         orderList.setLayoutManager(new LinearLayoutManager(this));
@@ -42,7 +42,7 @@ public class AdminCheckOrderActivity extends AppCompatActivity {
         super.onStart();
         FirebaseRecyclerOptions<AdminOrders> options =
                 new FirebaseRecyclerOptions.Builder<AdminOrders>()
-                        .setQuery(ordersRef, AdminOrders.class)
+                        .setQuery(orderRef, AdminOrders.class)
                         .build();
         FirebaseRecyclerAdapter<AdminOrders,AdminOrdersViewholder> adapter =
                 new FirebaseRecyclerAdapter<AdminOrders, AdminOrdersViewholder>(options) {
@@ -57,7 +57,7 @@ public class AdminCheckOrderActivity extends AppCompatActivity {
                             @Override
                             public void onClick(View view) {
                                 String uID = getRef(position).getKey();
-                                Intent intent = new Intent(AdminCheckOrderActivity.this, AdminCheckOrderActivity.class);
+                                Intent intent = new Intent(AdminCheckOrderActivity.this, AdminUserOrderActivity.class);
                                 intent.putExtra("uid", uID);
                                 startActivity(intent);
                             }
@@ -113,6 +113,6 @@ public class AdminCheckOrderActivity extends AppCompatActivity {
         }
     }
     private void removeOrder(String uID) {
-        ordersRef.child(uID).removeValue();
+        orderRef.removeValue();
     }
 }
